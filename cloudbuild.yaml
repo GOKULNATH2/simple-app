@@ -1,14 +1,17 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: 
-    - '-c'
-    - |
-      if [[ -n "$_FILE_HAS_CHANGED" ]]; then
-        echo "The file HAS changed"
-        [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:latest', '.' ]
-      else
-        echo "No, the file did not change, we shall exit"
-      fi
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:v1', '.' ]
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:latest']
+  args: [ 'push', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:v1']
+
+jobs:
+  - gcr.io/cloud-builders/docker
+  rules: 
+    - changes:
+        - Dockerfile
+
+
+
+
+
