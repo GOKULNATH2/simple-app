@@ -1,7 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: 
-    - if [[ -n "$_FILE_HAS_CHANGED" ]]; then
+    - '-c'
+    - |
+      if [[ -n "$_FILE_HAS_CHANGED" ]]; then
         echo "The file HAS changed"
         [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:latest', '.' ]
       else
