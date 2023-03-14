@@ -3,11 +3,11 @@ steps:
   args: 
     - if [[ -n "$_FILE_HAS_CHANGED" ]]; then
         echo "The file HAS changed"
-        [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:v1', '.' ]
+        [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:latest', '.' ]
       else
         echo "No, the file did not change, we shall exit"
         exit 0
       fi
   
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:v1']
+  args: [ 'push', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:latest']
