@@ -8,7 +8,6 @@ steps:
         [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:latest', '.' ]
       else
         echo "No, the file did not change, we shall exit"
-        exit 0
       fi
   
 - name: 'gcr.io/cloud-builders/docker'
