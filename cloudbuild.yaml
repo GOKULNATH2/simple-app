@@ -1,7 +1,6 @@
 steps:
 - name: python
   args: 
-  - '-c'
   - |
     echo $BRANCH_NAME
     if [[ -n $_FILE_HAS_CHANGED ]]; then
