@@ -1,9 +1,13 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:v1', '.' ]
-  
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}/myapp:v1']
+  args: 
+    - if [[ -n "$_FILE_HAS_CHANGED" ]]; then
+        echo "The file HAS changed"
+        python app/app.py
+      else
+        echo "No, the file did not change, we shall exit"
+        exit 0
+      fi
 
 
 
