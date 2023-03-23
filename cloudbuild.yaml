@@ -1,8 +1,9 @@
 steps:
 - name: python
   args: 
-  - '-c'
-  - if [[ -n --branch main "$_FILE_HAS_CHANGED" ]]; then
+  - -c
+  - |
+    if [[ -n "$_BRANCH_NAME" "$_FILE_HAS_CHANGED" ]]; then
       echo "The file HAS changed"
     else
       echo "No, the file did not change, we shall exit"
