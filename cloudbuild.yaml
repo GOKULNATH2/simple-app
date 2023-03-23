@@ -3,10 +3,10 @@ steps:
   entrypoint: 'bash'
   args: 
   - echo "$BRANCH_NAME"
-    if [[ -n "app/**" ]]; then
-      bash echo "The file HAS changed"
+    if [[ -n $(-- cloud-build/app/) ]]; then
+      echo "The file HAS changed"
     else
-      bash echo "No, the file did not change, we shall exit"
+      echo "No, the file did not change, we shall exit"
       exit 0
     fi
 
