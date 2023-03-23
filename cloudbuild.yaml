@@ -3,10 +3,10 @@ steps:
   entrypoint: python
   args: 
   - bash echo "$BRANCH_NAME"
-    if [[ -n app/ ]]; then
-      echo "The file HAS changed"
+    if [[ -n app/** ]]; then
+      bash echo "The file HAS changed"
     else
-      echo "No, the file did not change, we shall exit"
+      bash echo "No, the file did not change, we shall exit"
       exit 0
     fi
 
