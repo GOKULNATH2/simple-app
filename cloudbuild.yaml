@@ -1,6 +1,5 @@
 steps:
 - name: python
-  entrypoint: python
   args: 
   - bash echo "$BRANCH_NAME"
     if [[ -n "app/**" ]]; then
