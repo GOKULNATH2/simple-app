@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'run python file'
   args: 
     - if [[ -n "$_FILE_HAS_CHANGED" ]]; then
         echo "The file HAS changed"
