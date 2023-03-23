@@ -1,7 +1,8 @@
 steps:
 - name: python
+  entrypoint: 'bash'
   args: 
-  - bash echo "$BRANCH_NAME"
+  - echo "$BRANCH_NAME"
     if [[ -n "app/**" ]]; then
       bash echo "The file HAS changed"
     else
