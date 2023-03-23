@@ -1,8 +1,8 @@
 steps:
 - name: python
-  entrypoint: 'bash'
+  entrypoint: 'python'
   args: 
-  - echo $BRANCH_NAME
+  - ["-m","python","app/app.py"]
     
 
 
