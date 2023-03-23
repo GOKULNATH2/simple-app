@@ -1,5 +1,5 @@
 steps:
-- name: 'run python file'
+- name: python
   args: 
     - if [[ -n "$_FILE_HAS_CHANGED" ]]; then
         echo "The file HAS changed"
