@@ -1,6 +1,8 @@
 steps:
 - name: python
+  entrypoint: 'bash'
   args: 
+  - 'c'
   - echo $BRANCH_NAME
     
 
