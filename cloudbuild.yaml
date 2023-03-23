@@ -3,7 +3,6 @@ steps:
   args: 
     - if [[ -n "$_FILE_HAS_CHANGED" ]]; then
         echo "The file HAS changed"
-        # ["python","app/app.py"] 
       else
         echo "No, the file did not change, we shall exit"
         exit 0
