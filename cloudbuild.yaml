@@ -1,9 +1,14 @@
 steps:
 - name: python
-  entrypoint: 'python'
+  entrypoint: python
   args: 
-  - app/app.py
-    
+  - bash echo "$BRANCH_NAME"
+    if [[ -n app/ ]]; then
+      echo "The file HAS changed"
+    else
+      echo "No, the file did not change, we shall exit"
+      exit 0
+    fi
 
 
 
