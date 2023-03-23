@@ -1,4 +1,4 @@
 FROM python:3.8-slim-buster
-WORKDIR /app
+# WORKDIR /app
 COPY . .
-CMD [ "python", "app.py"]
+CMD [ "python", "app/app.py"]
