@@ -3,7 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - echo "$BRANCH_NAME"
-    if [[ -n $(git diff --quiet HEAD main -- cloud-build/simple-app/app/) ]]; then
+    if [[ -n $(git diff --quiet HEAD master -- cloud-build/simple-app/app/) ]]; then
       echo "The file HAS changed"
     else
       echo "No, the file did not change, we shall exit"
