@@ -2,9 +2,8 @@ steps:
 - name: python
   entrypoint: 'bash'
   args: 
-  - 'c'
   - echo "$BRANCH_NAME"
-    if [[ -n $(-- cloud-build/app/) ]]; then
+    if [[ -n $(git diff --quiet main master -- cloud-build/app/) ]]; then
       echo "The file HAS changed"
     else
       echo "No, the file did not change, we shall exit"
