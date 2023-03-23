@@ -1,7 +1,8 @@
 steps:
 - name: python
   entrypoint: 'python'
-  args: ["app/app.py"]
+  args: 
+  - app/app.py
     
 
 
