@@ -5,14 +5,13 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r HEAD)"
-    echo "$COMMIT_SHA"
-    # if [[ -n $(git diff master $COMMIT_SHA -- cloud-build/simple-app/app/) ]]; then
-    #   echo "The file HAS changed"
-    #   python app/app.py
-    # else
-    #   echo "No, the file did not change, we shall exit"
-    #   exit 0
-    # fi
+    if [[ -n $(git diff main $COMMIT_SHA -- cloud-build/simple-app/app/) ]]; then
+      echo "The file HAS changed"
+      python app/app.py
+    else
+      echo "No, the file did not change, we shall exit"
+      exit 0
+    fi
 
 
 
