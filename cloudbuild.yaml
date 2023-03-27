@@ -5,7 +5,6 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r master)"
-  # - bash echo "$(git ls-tree -r branch)"
     if [[ -n $(git diff --quiet master -- app/) ]]; then
       echo "The file HAS changed"
     else
