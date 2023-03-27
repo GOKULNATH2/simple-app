@@ -4,7 +4,7 @@ steps:
   args: 
   - '-c'
   - |
-    echo "name"
+    echo "$(git ls-tree -r branch)"
   # - bash echo "$(git ls-tree -r branch)"
     # if [[ -n $(git diff --quiet main -- cloud-build/simple-app/app/) ]]; then
     #   echo "The file HAS changed"
