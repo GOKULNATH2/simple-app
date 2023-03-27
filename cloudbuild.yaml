@@ -6,8 +6,8 @@ steps:
   - |
     echo "$(git ls-tree -r master)"
     echo "$COMMIT_SHA"
-    git fetch google/master
-    git diff --name-only google/master..$COMMIT_SHA -- cloud-build/simple-app/app/ >/tmp/diff
+    git fetch master
+    git diff --name-only master..$COMMIT_SHA -- cloud-build/simple-app/app/ >/tmp/diff
     if [[ -s /tmp/diff ]];then
       echo "The file HAS changed"
       python app/app.py
