@@ -3,12 +3,13 @@ steps:
   entrypoint: 'bash'
   args: 
   - echo "$BRANCH_NAME"
-    if [[ -n $(git diff --quiet main -- cloud-build/simple-app/app/) ]]; then
-      echo "The file HAS changed"
-    else
-      echo "No, the file did not change, we shall exit"
-      exit 0
-    fi
+  - echo "$(git ls-tree -r main)"
+    # if [[ -n $(git diff --quiet main -- cloud-build/simple-app/app/) ]]; then
+    #   echo "The file HAS changed"
+    # else
+    #   echo "No, the file did not change, we shall exit"
+    #   exit 0
+    # fi
 
 
 
