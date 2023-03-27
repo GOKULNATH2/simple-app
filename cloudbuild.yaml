@@ -6,7 +6,6 @@ steps:
   - |
     echo "$(git ls-tree -r master)"
     echo "$COMMIT_SHA"
-    git fetch main
     git diff --name-only master..$COMMIT_SHA -- cloud-build/simple-app/app/ >/tmp/diff
     if [[ -s /tmp/diff ]];then
       echo "The file HAS changed"
