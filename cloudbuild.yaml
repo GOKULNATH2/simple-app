@@ -5,7 +5,7 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r HEAD)"
-    if [[ -n $(git diff HEAD master -- app/) ]]; then
+    if [[ $(git diff HEAD master -- app/) ]]; then
       echo "The file HAS changed"
       python app/app.py
     else
