@@ -4,8 +4,8 @@ steps:
   args: 
   - '-c'
   - |
-    echo "$(git ls-tree -r HEAD)"
-    if [[ -n $(git diff $COMMIT_SHA HEAD  -- cloud-build/simple-app/app/) ]]; then
+    echo "$(git ls-tree -r main)"
+    if [[ -n $(git diff $COMMIT_SHA main  -- cloud-build/simple-app/app/) ]]; then
       echo "The file HAS changed"
       python app/app.py
     else
