@@ -5,7 +5,7 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r master)"
-    if [[ -n $(git diff --quiet master -- app) ]]; then
+    if [[ -n $(git diff --quiet master -- cloudbuild.yaml) ]]; then
       echo "The file HAS changed"
       python app/app.py
     else
