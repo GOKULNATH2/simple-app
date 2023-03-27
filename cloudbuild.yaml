@@ -6,7 +6,8 @@ steps:
   - |
     echo "$(git ls-tree -r master)"
     echo "$COMMIT_SHA"
-    if [[ -n $(git diff $REF_NAME $COMMIT_SHA  -- cloud-build/simple-app/app/) ]]; then
+    if [[ -n $(git diff $REF_NAME $COMMIT_SHA  -- cloud-build/simple-app/app/) ]]; 
+    then
       echo "The file HAS changed"
       python app/app.py
     else
