@@ -2,7 +2,8 @@ steps:
 - name: python
   entrypoint: 'bash'
   args: 
-  - echo "$(git ls-tree -r main)"
+  - echo "$BRANCH_NAME"
+  # - echo "$(git ls-tree -r branch)"
     # if [[ -n $(git diff --quiet main -- cloud-build/simple-app/app/) ]]; then
     #   echo "The file HAS changed"
     # else
