@@ -11,6 +11,8 @@ steps:
     echo "$BRANCH_NAME"
     echo "$(git log -1)"
     echo "$(git rev-list master)"
+    echo "$(git rev-list main)"
+    echo "$(git rev-list HEAD)"
     echo "$(git log master)"
     echo "$(git log -1 --pretty=format:"%h" --follow Dockerfile)"
     echo "$(git log app/app.py)"
