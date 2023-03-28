@@ -9,6 +9,7 @@ steps:
     echo "$BRANCH_NAME"
     echo "$(git log -1 --skip 1)"
     echo "$(git diff --name-only master $COMMIT_SHA)"
+    echo "$(git branch)"
     git fetch master 
     if [[ -n $(git diff --name-only master $COMMIT_SHA  -- cloud-build/simple-app/app/) ]];then
       echo "The file HAS changed"
