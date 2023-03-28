@@ -6,6 +6,7 @@ steps:
   - |
     echo "$(git ls-tree -r master)"
     echo "$COMMIT_SHA"
+    echo "$BRANCH_NAME"
     echo "$(git log -1 --skip 1)"
     echo "$(git diff --name-only $COMMIT_SHA master)"
     if [[ $(git diff --name-only master $COMMIT_SHA  -- cloud-build/simple-app/app/) ]];then
