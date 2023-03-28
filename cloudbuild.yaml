@@ -5,7 +5,7 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r master)"
-    echo "$COMMIT_SHA"
+    echo "$COMMIT_SHA^1"
     echo "$REVISION_ID"
     echo "$(git diff-tree --no-commit-id --name-only $COMMIT_SHA -r)"
     echo "$BRANCH_NAME"
@@ -18,7 +18,7 @@ steps:
     echo "$(git log app/app.py)"
     echo "$(git log -1 --pretty=format:"%h")"
 
-    
+
     
 
 
