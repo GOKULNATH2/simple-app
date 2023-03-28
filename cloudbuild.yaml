@@ -5,7 +5,21 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r master)"
-    
+    echo "$COMMIT_SHA"
+    echo "$BRANCH_NAME"
+    echo "$(git log -1 --skip 1)"
+    echo "$(git diff --name-only $COMMIT_SHA master)"
+    echo "$(git branch)"
+    git fetch master 
+    if [[ -n $(git diff --name-only $COMMIT_SHA master -- cloud-build/simple-app/app/) ]];then
+      echo "The file HAS changed"
+      python app/app.py
+      echo "$COMMIT_SHA[1]"
+      echo "$COMMIT_SHA $(-1 --skip 1)"
+    else
+      echo "No, the file did not change, we shall exit"
+      exit 0
+    fi
 
 
 
