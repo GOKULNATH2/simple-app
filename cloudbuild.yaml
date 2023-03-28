@@ -8,8 +8,9 @@ steps:
     echo "$COMMIT_SHA"
     echo "$BRANCH_NAME"
     echo "$(git log -1 --skip 1)"
-    echo "$(git diff --name-only $COMMIT_SHA master)"
-    if [[ $(git diff --name-only master $COMMIT_SHA  -- cloud-build/simple-app/app/) ]];then
+    echo "$(git diff --name-only master $COMMIT_SHA)"
+    git fetch master 
+    if [[ -n $(git diff --name-only master $COMMIT_SHA  -- cloud-build/simple-app/app/) ]];then
       echo "The file HAS changed"
       python app/app.py
       echo "$COMMIT_SHA[1]"
