@@ -10,7 +10,7 @@ steps:
     echo "$(git log -1 --skip 1)"
     echo "$(git diff --name-only $COMMIT_SHA master)"
     echo "$(git branch)"
-    git fetch master 
+    echo "$(git show --pretty="" --name-only $COMMIT_SHA)"
     if [[ -n $(git diff --name-only $COMMIT_SHA master -- cloud-build/simple-app/app/) ]];then
       echo "The file HAS changed"
       python app/app.py
