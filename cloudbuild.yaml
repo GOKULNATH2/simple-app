@@ -17,6 +17,8 @@ steps:
     echo "$(git log -1 --pretty=format:"%h" --follow Dockerfile)"
     echo "$(git log app/app.py)"
     echo "$(git log -1 --pretty=format:"%h")"
+
+    
     
 
 
