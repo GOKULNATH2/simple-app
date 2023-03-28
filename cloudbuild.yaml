@@ -10,7 +10,7 @@ steps:
     echo "$(git diff-tree --no-commit-id --name-only $COMMIT_SHA -r)"
     echo "$BRANCH_NAME"
     echo "$(git log)"
-    echo "$(git diff --name-only $COMMIT_SHA 550cca96eaf545c9155545bc941345ccf45bffd7)"
+    echo "$(git diff --name-only $COMMIT_SHA..550cca96eaf545c9155545bc941345ccf45bffd7)"
     echo "$(git branch)"
     echo "$(git diff --pretty="" --name-only $COMMIT_SHA)"
     
