@@ -12,8 +12,6 @@ steps:
     echo "$(git log -1)"
     echo "$(git log -1 --pretty=format:"%h" --follow app/app.py)"
     echo "$(git log -1 --pretty=format:"%h")"
-    echo "$(git log --name-only)"
-    echo "$(git log --name-only --follow app/app.py)"
     
 
 
