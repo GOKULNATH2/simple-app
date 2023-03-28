@@ -9,10 +9,15 @@ steps:
     echo "$REVISION_ID"
     echo "$(git diff-tree --no-commit-id --name-only $COMMIT_SHA -r)"
     echo "$BRANCH_NAME"
-    echo "$(git log)"
-    echo "$(git diff --name-only a9c7ca3e23719aa49a60dffcfe669e7ec1f4ba3b d08d54cc46ffa0f282edf0318d92a865663a3e85)"
-    echo "$(git branch)"
-    echo "$(git diff --pretty="" --name-only $COMMIT_SHA)"
+    echo "$(git log -1)"
+    echo "$(git log -1 --pretty=format:"%h" --follow app/app.py)"
+    echo "$(git log -1 --pretty=format:"%h")"
+    echo "$(git log --name-only)"
+    echo "$(git log --name-only --follow app/app.py)"
+    
+
+
+
     
 
 
