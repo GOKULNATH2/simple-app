@@ -3,10 +3,8 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - 'hash=${COMMIT_SHA}'
   - |
-    echo "$hash"
-    echo "$(git log -1 --name-only --pretty=format: $hash)"
+    echo "$(git log -1 --name-only --pretty=format: $COMMIT_SHA)"
     
 
 
