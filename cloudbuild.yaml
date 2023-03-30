@@ -5,10 +5,8 @@ steps:
   - '-c'
   - |
     echo "$(git ls-tree -r master)"
-    echo "$COMMIT_SHA^1"
-    echo "$REVISION_ID"
     echo "$(git log -1 --name-only --pretty=format:$COMMIT_SHA)"
-    if ["$(git log -1 --name-only --pretty=format:$COMMIT_SHA)" == 'app/app.py']; then
+    if [$(git log -1 --name-only --pretty=format:$COMMIT_SHA) == 'app/app.py']; then
       echo "The file HAS changed"
     else
       echo "No, the file did not change, we shall exit"
