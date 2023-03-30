@@ -4,7 +4,7 @@ steps:
   args: 
   - '-c'
   - |
-    $(git log -1 --name-only --pretty=format: $COMMIT_SHA)
+    echo "$(git log -1 --name-only --pretty=format: $COMMIT_SHA)"
     
 
 
