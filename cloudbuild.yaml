@@ -4,8 +4,7 @@ steps:
   args: 
   - '-c'
   - |
-    $(git log -1 --name-only --pretty=format:9801ead4bbcee20a83b679af34697d9af1ca348e) > txt
-    echo "$txt"
+    echo "$(git log -1 --name-only --pretty=format: '9801ead4bbcee20a83b679af34697d9af1ca348e')" 
     
 
 
