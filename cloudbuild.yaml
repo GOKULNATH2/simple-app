@@ -5,7 +5,8 @@ steps:
   - '-c'
   - 'hash=${COMMIT_SHA}'
   - |
-    echo "$(git log -1 --name-only --pretty=format: $hash" 
+    echo "$hash"
+    echo "$(git log -1 --name-only --pretty=format: $hash)"
     
 
 
