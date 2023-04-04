@@ -1,7 +1,7 @@
 import subprocess
 import os
 def get_changed_folders():
-    cmd = "git log -1 --pretty=format: d5bb98e705f9476178a1496942eddcb1dd9caf3d"
+    cmd = "git log -1 --pretty=format:d5bb98e705f9476178a1496942eddcb1dd9caf3d"
     res = execute_command(cmd.split())
     print("res:",res)
 
