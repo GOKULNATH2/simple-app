@@ -1,12 +1,10 @@
 steps:
 - name: python
-  entrypoint: 'bash'
+  entrypoint: 'python'
   args: 
-  - '-c'
-  - |
-    echo "$(git log -1 --name-only --pretty=format: $COMMIT_SHA)"
+  - run_cmd.py
 
-    
+
     
 
 
