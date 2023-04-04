@@ -5,6 +5,8 @@ steps:
   - '-c'
   - |
     echo "$(git log -1 --name-only --pretty=format: $COMMIT_SHA)"
+
+    
     
 
 
