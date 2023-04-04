@@ -1,7 +1,7 @@
 import subprocess
 import os
 def get_changed_folders():
-    cmd = "git log -1 --name-only --pretty=format: $COMMIT_SHA"
+    cmd = "git log -1 --name-only --pretty=format:$COMMIT_SHA"
     res = execute_command(cmd.split())
     print("res:",res)
 
