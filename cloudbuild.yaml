@@ -1,8 +1,19 @@
 steps:
 - name: python
-  entrypoint: 'python'
+  entrypoint: 'bash'
   args: 
-  - run_cmd.py
+  - '-c'
+  - |
+    echo "$(git ls-tree -r master)"
+    echo "$COMMIT_SHA"
+    if [[ -n $(git diff master $COMMIT_SHA  -- app/) ]];then
+      echo "The file HAS changed"
+      python app/app.py
+    else
+      echo "No, the file did not change, we shall exit"
+      exit 0
+    fi
+
 
 
     
