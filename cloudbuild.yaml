@@ -4,7 +4,7 @@ steps:
   args: 
   - '-c'
   - |
-    if git diff --name-only master~1 | grep -q "app/"; then
+    if git diff --name-only HEAD~1 | grep -q "app/"; then
       echo "The file HAS changed"
       python app/app.py
     else
